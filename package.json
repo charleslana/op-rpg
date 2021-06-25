@@ -1,0 +1,33 @@
+{
+  "name": "op-rpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "start": "node src/index.ts",
+    "build": "concurrently \"npm run build:client\" \"npm run build:server\"",
+    "build:client": "parcel build src/client/index.html -d build/static --no-minify",
+    "build:server": "parcel build src/server/server.ts -d build --target node --no-minify",
+    "dev": "node src/server/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.4",
+    "@types/socket.io": "^3.0.2",
+    "@types/socket.io-client": "^3.0.0",
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7",
+    "open": "^8.2.1",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  }
+}
